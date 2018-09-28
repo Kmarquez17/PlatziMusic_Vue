@@ -88,5 +88,5 @@ select {
   height: 30px;
   border: none;
   background: transparent;
-}
+} 
 </style>
