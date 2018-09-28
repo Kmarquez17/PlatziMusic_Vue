@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Curso Vue.js</title>
+</head>
+
+<body>
+  <div id="app">
+    <form @submit.prevent="submit">
+      <h2>¿Cuáles son tu cursos favoritos?</h2>
+      <template v-for="curso in cursos">
+        <input v-model="cursoSeleccionados" type="checkbox" :id="curso.value" :value="curso.value">
+        <label :for="curso.value">{{curso.nombre}}</label>
+      </template>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script type="text/javascript">
+    let app = new Vue({
+      el: '#app',
+      data: {
+        cursos: [
+          { nombre: 'Curso Vue js', value: 'vue' },
+          { nombre: 'Curso Seo', value: 'seo' },
+          { nombre: 'Curso React / Redux', value: 'react' },
+        ],
+        cursoSeleccionados: []
+      },
+      methods: {
+        submit: function () {
+          console.log(this.cursoSeleccionados)
+        },
+      },
+    })
+  </script>
+</body>
+
+</html>
