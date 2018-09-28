@@ -86,7 +86,6 @@ select {
   font-family: Arial;
   font-weight: 700;
   height: 30px;
-  border: none;
   background: transparent;
 } 
 </style>
